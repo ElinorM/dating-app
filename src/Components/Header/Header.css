@@ -1,0 +1,14 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px
+}
+
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
