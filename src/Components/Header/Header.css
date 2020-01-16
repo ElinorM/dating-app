@@ -2,7 +2,14 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5px
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
 }
 
 
