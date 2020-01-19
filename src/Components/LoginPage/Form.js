@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./Form.css";
 
-export function Form({ title, buttonName }) {
-    const [user, setUser] = useState("");
+export function Form({ title, buttonName, onSubmit }) {
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const submitUser = e => {
         e && e.preventDefault();
-
-        setUser("");  
+        onSubmit({username, password});
+        setUsername("");  
         setPassword(""); 
     }
 
@@ -19,7 +19,7 @@ export function Form({ title, buttonName }) {
             </div>
             <div className="formItem">
                 User: 
-                <input type="text" value={user} onChange={e => setUser(e.target.value)} required/>
+                <input type="text" value={username} onChange={e => setUsername(e.target.value)} required/>
             </div>
             <div className="formItem">
                 Password: 
