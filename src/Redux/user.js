@@ -11,11 +11,7 @@ const { reducer, actions } = createSlice({
         lookingFor: ""
     },
     reducers: {
-      registerUser: (_ , { payload }) => payload,
-      updateUser: (user , { payload: {name, age, gender, lookingFor}}) => {
-          return {...user, name, age, gender, lookingFor}
-      },
-      loginUser: (_, { payload }) => payload,
+      saveUser: (_ , { payload }) => payload,
     }
   });
   

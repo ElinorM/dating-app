@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "./Form"
+import { Form } from "../Form/Form"
 import { useAction } from "../../Redux/action";
 import { userActions } from "../../Redux/user";
 import { loginUserServer } from "../../Data/dataManager";
@@ -10,13 +10,13 @@ export function LoginForm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const loginUser = useAction(userActions.loginUser);
+    const saveUser = useAction(userActions.saveUser);
     
 
     async function submitLoginForm() {
         const answerFromServer = await loginUserServer(username, password);
         if (answerFromServer) {
-            loginUser(answerFromServer);
+            saveUser(answerFromServer);
             return true;
         } 
         alert("User doesn't exist or password incorrect"); 

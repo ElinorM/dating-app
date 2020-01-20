@@ -9,7 +9,7 @@ export function Header() {
 
     const getLoginLinkOrUsernam = () => {
         return loggedIn 
-            ? <h4>{`Hello, ${username}`}</h4>
+            ? <Link className="link" to="/profile">{`Hello, ${username}`}</Link>
             : <Link className="link" to="/login">Login</Link>
     }
     

@@ -41,3 +41,14 @@ export async function loginUserServer(username, password) {
     const user =  users.find(user => user.username === username);
     return (user && user.password === password) ? user : null
 }
+
+export async function updateProfileServer(username, name, age, gender, lookingFor) {
+    const usersFromServer = await getUsers();
+    const user =  usersFromServer.find(user => user.username === username);
+    user.name = name;
+    user.age = age;
+    user.gender = gender;
+    user.lookingFor = lookingFor;
+    setUsers(usersFromServer);
+    return user;
+}

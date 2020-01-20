@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { Header } from './Components/Header/Header';
 import { HomePage } from './Components/HomePage/HomePage';
 import { LoginPage } from './Components/LoginPage/LoginPage';
+import { ProfilePage } from './Components/ProfilePage/ProfilePage'
 
 
 import './App.css';
@@ -17,6 +18,9 @@ export function App() {
         </Route>
         <Route path="/login">
           <LoginPage />
+        </Route>
+        <Route path="/profile">
+          <ProfilePage />
         </Route>
       </Switch>
     </div>
