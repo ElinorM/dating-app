@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Form.css";
 
-export function Form({ title, buttonName, onSubmit, children }) {
+export function Form({ title, buttonName, onSubmit, buttonClassName="formButton" ,children }) {
     const history = useHistory();
     const goToHomePage = () => history.push("/");
     
@@ -14,11 +14,9 @@ export function Form({ title, buttonName, onSubmit, children }) {
 
     return (
         <form onSubmit={submitUser}>
-            <div className="formHeader">
-                <h2>{title}</h2>
-            </div>
+            {title && <div className="formHeader"><h2>{title}</h2></div>}
             {children}
-            <div className="formButton">
+            <div className={buttonClassName}>
                 <button>{buttonName}</button>
             </div>
         </form>

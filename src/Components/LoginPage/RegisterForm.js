@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "./Form"
+import { Form } from "../Form/Form"
 import { useAction } from "../../Redux/action";
 import { userActions } from "../../Redux/user";
 import { registerUserServer } from "../../Data/dataManager";
@@ -10,7 +10,7 @@ export function RegisterForm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
-    const registerUser = useAction(userActions.registerUser);
+    const saveUser = useAction(userActions.saveUser);
       
     async function submitRegisterForm() {
         if (password !== confirmPassword) {
@@ -18,7 +18,7 @@ export function RegisterForm() {
         } else {
             const answerFromServer = await registerUserServer(username, password); 
             if (answerFromServer) {
-                registerUser(answerFromServer);
+                saveUser(answerFromServer);
                 return true;
             } 
             alert("User exist"); 

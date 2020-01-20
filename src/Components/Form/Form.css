@@ -1,3 +1,16 @@
+Form {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+}
+
 .formItem {
     width: 200px;
     display: flex;
@@ -19,5 +32,9 @@ button, input {
 }
 
 input {
+    width: 100px;
+}
+
+select {
     width: 100px;
 }
