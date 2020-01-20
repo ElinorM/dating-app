@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { useHistory } from "react-router-dom";
 import "./Form.css";
 
-export function Form({ title, buttonName, onSubmit }) {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-
-    const submitUser = e => {
+export function Form({ title, buttonName, onSubmit, children }) {
+    const history = useHistory();
+    const goToHomePage = () => history.push("/");
+    
+    async function submitUser(e) {
         e && e.preventDefault();
-        onSubmit({username, password});
-        setUsername("");  
-        setPassword(""); 
+        const isValid = await onSubmit();
+        isValid && goToHomePage();
     }
 
     return (
@@ -17,14 +17,7 @@ export function Form({ title, buttonName, onSubmit }) {
             <div className="formHeader">
                 <h2>{title}</h2>
             </div>
-            <div className="formItem">
-                User: 
-                <input type="text" value={username} onChange={e => setUsername(e.target.value)} required/>
-            </div>
-            <div className="formItem">
-                Password: 
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} required/>
-            </div>
+            {children}
             <div className="formButton">
                 <button>{buttonName}</button>
             </div>
