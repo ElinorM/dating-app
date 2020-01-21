@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form } from "../Form/Form"
 import { useAction } from "../../Redux/action";
 import { userActions } from "../../Redux/user";
-import { loginUserServer } from "../../Data/dataManager";
+import { loginUserFromServer } from "../../Data/dataManager";
 import "./LoginPage.css";
 
 
@@ -14,7 +14,7 @@ export function LoginForm() {
     
 
     async function submitLoginForm() {
-        const answerFromServer = await loginUserServer(username, password);
+        const answerFromServer = await loginUserFromServer(username, password);
         if (answerFromServer) {
             saveUser(answerFromServer);
             return true;

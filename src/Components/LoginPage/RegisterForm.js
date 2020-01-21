@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form } from "../Form/Form"
 import { useAction } from "../../Redux/action";
 import { userActions } from "../../Redux/user";
-import { registerUserServer } from "../../Data/dataManager";
+import { registerUserToServer } from "../../Data/dataManager";
 import "./LoginPage.css";
 
 
@@ -16,7 +16,7 @@ export function RegisterForm() {
         if (password !== confirmPassword) {
             alert("Passwords not match, please re-enter");
         } else {
-            const answerFromServer = await registerUserServer(username, password); 
+            const answerFromServer = await registerUserToServer(username, password); 
             if (answerFromServer) {
                 saveUser(answerFromServer);
                 return true;
