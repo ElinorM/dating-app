@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Form } from "../Form/Form";
 import { useAction } from "../../Redux/action";
 import { userActions } from "../../Redux/user";
-import { updateProfileServer } from "../../Data/dataManager";
+import { updateProfileToServer } from "../../Data/dataManager";
 import "./ProfilePage.css";
 
 export function ProfilePage() {
@@ -15,7 +15,7 @@ export function ProfilePage() {
     const saveUser = useAction(userActions.saveUser);
 
     async function submitProfileForm() {
-        const answerFromServer = await updateProfileServer(user.username, name, age, gender, lookingFor);
+        const answerFromServer = await updateProfileToServer(user.username, name, age, gender, lookingFor);
         saveUser(answerFromServer);
         return true;
     }
@@ -29,21 +29,23 @@ export function ProfilePage() {
                 </div>
                 <div className="formItem">
                     Age: 
-                    <input type="number" value={age} onChange={e => setAge(e.target.value)} required/>
+                    <input type="number" value={age} onChange={e => setAge(e.target.value)} min="1" required/>
                 </div>
                 <div className="formItem">
                     Gender: 
                     <select value={gender} onChange={e => setGender(e.target.value)} required>
-                        <option>Male</option>
-                        <option>Female</option>
+                        <option value={""}>Select</option>
+                        <option value={"male"}>Man</option>
+                        <option value={"female"}>Woman</option>
                     </select>
                 </div>
                 <div className="formItem">
                     Looking for: 
                     <select value={lookingFor} onChange={e => setLookingFor(e.target.value)} required>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Male&Female</option>
+                        <option value={""}>Select</option>
+                        <option value={"male"}>Men</option>
+                        <option value={"female"}>Women</option>
+                        <option value={"male&female"}>Men & Women</option>
                     </select>
                 </div>
             </Form>

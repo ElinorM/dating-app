@@ -12,3 +12,16 @@ export function getUsers() {
         res(JSON.parse(storage.getItem("users")));
     });
 }
+
+export function setFakeUsers(users) {
+    return new Promise(res => {
+        storage.setItem("fakeUsers", JSON.stringify(users));
+        res("sucess")
+    })        
+}
+
+export function getFakeUsers() {
+    return new Promise(res => {
+        res(JSON.parse(storage.getItem("fakeUsers")));
+    });
+}
