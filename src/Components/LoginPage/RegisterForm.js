@@ -14,7 +14,7 @@ export function RegisterForm() {
       
     async function submitRegisterForm() {
         if (password !== confirmPassword) {
-            alert("Passwords not match, please re-enter");
+            alert("Passwords do not match, please re-enter");
         } else {
             const answerFromServer = await registerUserToServer(username, password); 
             if (answerFromServer) {

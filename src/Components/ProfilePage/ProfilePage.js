@@ -35,17 +35,17 @@ export function ProfilePage() {
                     Gender: 
                     <select value={gender} onChange={e => setGender(e.target.value)} required>
                         <option value={""}>Select</option>
-                        <option value={"male"}>Man</option>
-                        <option value={"female"}>Woman</option>
+                        <option value={"Male"}>Man</option>
+                        <option value={"Female"}>Woman</option>
                     </select>
                 </div>
                 <div className="formItem">
                     Looking for: 
                     <select value={lookingFor} onChange={e => setLookingFor(e.target.value)} required>
                         <option value={""}>Select</option>
-                        <option value={"male"}>Men</option>
-                        <option value={"female"}>Women</option>
-                        <option value={"male&female"}>Men & Women</option>
+                        <option value={"Male"}>Men</option>
+                        <option value={"Female"}>Women</option>
+                        <option value={"Male&Female"}>Men & Women</option>
                     </select>
                 </div>
             </Form>

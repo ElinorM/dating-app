@@ -1,0 +1,58 @@
+.userpage {
+    height: 100vh;
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.userProfileContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.checkbox {
+    width:500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.checkboxInput {
+    width:20px;
+}
+
+.buttonsAndImageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.arrowLeft {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 30px 30px 0;
+    border-color: transparent #0c0e0f transparent transparent;
+}
+
+.arrowRight {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 0 30px 30px;
+    border-color: transparent transparent transparent #0c0e0f;
+}
+
+.userImage {
+    width: 300px;
+    height: 300px;
+}
