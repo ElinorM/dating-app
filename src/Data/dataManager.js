@@ -1,5 +1,6 @@
-import Ape, { name, age, image, date, arrayOf } from 'ape-mock';
+import Ape, { name, age, date, arrayOf, fromValues } from 'ape-mock';
 import { setUsers, getUsers, setFakeUsers, getFakeUsers} from "../Server/server.js";
+import { maleImages, femaleImages } from "./ProfilePics";
 
 
 const  isUserExist = (username, users) => {
@@ -35,8 +36,9 @@ function createFakeUsers() {
             firstName: name().female(),
             lastName: name().lastName(),
             age: age().adult(),
-            image: image().width(100).height(50),
-            gender: "female",
+            images: femaleImages,
+            profilePic: fromValues(femaleImages),
+            gender: "Female",
             joinedDate: date().random().startYearsAgo(10)
         }).random(10,10)
     }).generate();
@@ -46,8 +48,9 @@ function createFakeUsers() {
             firstName: name().male(),
             lastName: name().lastName(),
             age: age().adult(),
-            image: image().width(100).height(50),
-            gender: "male",
+            profilePic: fromValues(maleImages),
+            images: maleImages,
+            gender: "Male",
             joinedDate: date().random().startYearsAgo(10)
         }).random(10,10)
     }).generate();

@@ -16,7 +16,9 @@ export function HomePage() {
         async function getUsers() {
             const fakeUsers = await getFakeUsersFromServer();
             setRecentlyJoinedUsers(fakeUsers.slice(0,10));
-            setRecomendedUsers(fakeUsers.filter(user => lookingFor.includes(user.gender)));
+            lookingFor
+                ? setRecomendedUsers(fakeUsers.filter(user => lookingFor.includes(user.gender)))
+                : setRecomendedUsers(fakeUsers);
         }
         getUsers();
 

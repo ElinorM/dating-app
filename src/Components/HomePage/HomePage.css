@@ -19,6 +19,7 @@
 img {
     width:100px;
     height: 100px;
+    margin: 10px;
 }
 
 .userContainer {
@@ -26,5 +27,16 @@ img {
     justify-content: flex-start;
     align-items: flex-start;
     margin: 20px;
+    cursor: pointer;
 }
 
+.userDetails {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+ h6 {
+     margin: 5px;
+ }
